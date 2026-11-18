@@ -457,6 +457,19 @@
       }
     }
 
+    #projects { border-top: 1px solid var(--line); }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+    .project video, .project-gallery { width: 100%; aspect-ratio: 4 / 5; background: #e6dfd5; object-fit: contain; }
+    .project-gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+    .project-gallery img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: contain; scroll-snap-align: start; }
+    .project-gallery::after { content: ''; flex: 0 0 1px; }
+    .gallery-hint { font-size: 12px; color: #77736e; margin-bottom: 8px; }
+    .project-type { color: var(--red); font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 22px 0 10px; }
+    .project h3 { font: 400 29px 'Playfair Display', Georgia, serif; margin-bottom: 12px; }
+    .project > p:last-child { color: #55514c; font-size: 15px; line-height: 1.7; }
+    .connect-main { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .connect-photo { width: min(30vw, 330px); aspect-ratio: 1; object-fit: cover; object-position: center 28%; }
+    @media (max-width: 800px) { .project-grid { grid-template-columns: 1fr; gap: 48px; } .project video, .project-gallery { max-height: 600px; } .connect-main { align-items: flex-start; flex-direction: column; } .connect-photo { width: min(100%, 330px); } nav { flex-wrap: wrap; gap: 20px; } .nav-links { flex-wrap: wrap; } }
   </style>
 </head>
 
@@ -472,6 +485,7 @@
     <div class="nav-links">
       <a href="#about">about</a>
       <a href="#experience">experience</a>
+      <a href="#projects">projects</a>
       <a href="#skills">skills</a>
       <a href="#connect">connect</a>
     </div>
@@ -489,7 +503,7 @@
     <section class="hero">
 
       <p class="hero-label">
-        Communication · Marketing · Creative Storytelling
+        Communication · Marketing · Management
       </p>
 
       <h1>
@@ -530,7 +544,7 @@
         <div class="about-content">
 
           <p class="about-main">
-            I'm Kaitlyn, a Communication major and Marketing minor at
+            I'm Kaitlyn, a Communication major with Marketing and Management minors at
             <span>Fairfield University.</span>
           </p>
 
@@ -639,53 +653,18 @@
 
         </article>
 
-
-        <!-- DOGFISH -->
-
-        <article class="experience-item">
-
-          <div class="experience-date">
-            Summer 2023
-          </div>
-
-          <div class="experience-name">
-            <h3>Dogfish Taco Co.</h3>
-            <p>Line Worker · Chatham, MA</p>
-          </div>
-
-          <div class="experience-description">
-            Prepared customer orders in a fast-paced service environment
-            while maintaining quality, organization, cleanliness, and food
-            safety standards.
-          </div>
-
-        </article>
-
-
-        <!-- CHILLERS -->
-
-        <article class="experience-item">
-
-          <div class="experience-date">
-            Summer 2022
-          </div>
-
-          <div class="experience-name">
-            <h3>Chillers Shave Ice</h3>
-            <p>Team Member · Chatham, MA</p>
-          </div>
-
-          <div class="experience-description">
-            Prepared and served customer orders while providing efficient,
-            friendly service in a busy seasonal environment.
-          </div>
-
-        </article>
-
       </div>
 
     </section>
 
+
+<section id="projects"><div class="section-heading"><span class="section-number">03</span><h2 class="section-title">projects</h2></div><div class="project-grid"><article class="project"><video controls playsinline preload="metadata" aria-label="Summer study abroad promotion video"><source src="assets/summer-reel.mov" type="video/quicktime">Your browser does not support this video.</video><p class="project-type">Global Fairfield · Study Abroad</p><h3>Summer study abroad promotion</h3><p>A video promoting summer study abroad opportunities for Global Fairfield.</p></article><article class="project"><p class="gallery-hint">Swipe to see all 7 images →</p><div class="project-gallery" aria-label="Study abroad promotion image gallery" tabindex="0"><img src="assets/gallery/1.jpg" alt="Study abroad promotion image 1 of 7" loading="lazy">
+<img src="assets/gallery/2.jpg" alt="Study abroad promotion image 2 of 7" loading="lazy">
+<img src="assets/gallery/3.jpg" alt="Study abroad promotion image 3 of 7" loading="lazy">
+<img src="assets/gallery/4.jpg" alt="Study abroad promotion image 4 of 7" loading="lazy">
+<img src="assets/gallery/5.jpg" alt="Study abroad promotion image 5 of 7" loading="lazy">
+<img src="assets/gallery/6.jpg" alt="Study abroad promotion image 6 of 7" loading="lazy">
+<img src="assets/gallery/7.jpg" alt="Study abroad promotion image 7 of 7" loading="lazy"></div><p class="project-type">Global Fairfield · Study Abroad</p><h3>POV: studying abroad</h3><p>A study abroad promotion created for Global Fairfield.</p></article><article class="project"><video controls playsinline preload="metadata" aria-label="Cosetta TikTok promotion"><source src="assets/cosetta.mov" type="video/quicktime">Your browser does not support this video.</video><p class="project-type">Digital Marketing · Cosetta</p><h3>Cosetta TikTok promotion</h3><p>A TikTok video promoting Cosetta, a local Fairfield business, for a digital marketing class project.</p></article></div></section>
 
     <!-- =========================
          SKILLS
@@ -694,7 +673,7 @@
     <section id="skills">
 
       <div class="section-heading">
-        <span class="section-number">03</span>
+        <span class="section-number">04</span>
         <h2 class="section-title">skills</h2>
       </div>
 
@@ -734,7 +713,7 @@
     <section id="education">
 
       <div class="section-heading">
-        <span class="section-number">04</span>
+        <span class="section-number">05</span>
         <h2 class="section-title">education</h2>
       </div>
 
@@ -751,7 +730,7 @@
           <p class="degree">
             Bachelor of Arts · Communication
             <br>
-            Minor in Marketing
+            Minors in Marketing and Management
           </p>
 
           <p class="details">
@@ -787,9 +766,9 @@
           Have an idea? Let's connect.
         </p>
 
-        <h2 class="connect-title">
+        <div class="connect-main"><h2 class="connect-title">
           say hello.
-        </h2>
+        </h2><img class="connect-photo" src="assets/portrait.jpeg" alt="Kaitlyn Coakley"></div>
 
       </div>
 
@@ -860,3 +839,4 @@
 
 </body>
 </html>
+
