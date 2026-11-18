@@ -458,7 +458,11 @@
     }
 
     #projects { border-top: 1px solid var(--line); }
-    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+    .project-controls { display: flex; justify-content: flex-end; gap: 10px; margin: -30px 0 28px; }
+    .project-controls button { width: 48px; height: 48px; border: 1px solid var(--red); border-radius: 50%; color: var(--red); background: transparent; font-size: 24px; cursor: pointer; }
+    .project-controls button:hover, .project-controls button:focus-visible { background: var(--red); color: var(--cream); }
+    .project-grid { display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 56px) / 3); gap: 28px; overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 12px; }
+    .project { min-width: 0; scroll-snap-align: start; }
     .project video, .project-gallery { width: 100%; aspect-ratio: 4 / 5; background: #e6dfd5; object-fit: contain; }
     .project-flyer { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #e6dfd5; }
     .project-gallery { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
@@ -470,7 +474,7 @@
     .project > p:last-child { color: #55514c; font-size: 15px; line-height: 1.7; }
     .connect-main { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
     .connect-photo { width: min(30vw, 330px); aspect-ratio: 1; object-fit: cover; object-position: center 28%; }
-    @media (max-width: 800px) { .project-grid { grid-template-columns: 1fr; gap: 48px; } .project video, .project-gallery { max-height: 600px; } .connect-main { align-items: flex-start; flex-direction: column; } .connect-photo { width: min(100%, 330px); } nav { flex-wrap: wrap; gap: 20px; } .nav-links { flex-wrap: wrap; } }
+    @media (max-width: 800px) { .project-grid { grid-auto-columns: 86%; gap: 20px; } .project-controls { margin-top: -10px; } .project video, .project-gallery { max-height: 600px; } .connect-main { align-items: flex-start; flex-direction: column; } .connect-photo { width: min(100%, 330px); } nav { flex-wrap: wrap; gap: 20px; } .nav-links { flex-wrap: wrap; } }
   </style>
 </head>
 
@@ -666,13 +670,13 @@
     </section>
 
 
-<section id="projects"><div class="section-heading"><span class="section-number">03</span><h2 class="section-title">projects</h2></div><div class="project-grid"><article class="project"><video controls playsinline preload="metadata" aria-label="Summer study abroad promotion video"><source src="assets/summer-reel.mp4" type="video/mp4">Your browser does not support this video.</video><p class="project-type">Global Fairfield · Study Abroad</p><h3>Summer study abroad promotion</h3><p>A video promoting summer study abroad opportunities for Global Fairfield.</p></article><article class="project"><p class="gallery-hint">Swipe to see all 7 images →</p><div class="project-gallery" aria-label="Study abroad promotion image gallery" tabindex="0"><img src="assets/gallery/1.jpg" alt="Study abroad promotion image 1 of 7" loading="lazy">
+<section id="projects"><div class="section-heading"><span class="section-number">03</span><h2 class="section-title">projects</h2></div><div class="project-controls"><button type="button" class="projects-prev" aria-label="Scroll projects left" aria-controls="project-list">←</button><button type="button" class="projects-next" aria-label="Scroll projects right" aria-controls="project-list">→</button></div><div class="project-grid" id="project-list" tabindex="0" aria-label="Projects carousel"><article class="project"><video controls playsinline preload="metadata" aria-label="Summer study abroad promotion video"><source src="assets/summer-reel.mp4" type="video/mp4">Your browser does not support this video.</video><p class="project-type">Global Fairfield · Study Abroad</p><h3>Summer study abroad promotion</h3><p>A video promoting summer study abroad opportunities for Global Fairfield.</p></article><article class="project"><div class="project-gallery" aria-label="Study abroad promotion image gallery" tabindex="0"><img src="assets/gallery/1.jpg" alt="Study abroad promotion image 1 of 7" loading="lazy">
 <img src="assets/gallery/2.jpg" alt="Study abroad promotion image 2 of 7" loading="lazy">
 <img src="assets/gallery/3.jpg" alt="Study abroad promotion image 3 of 7" loading="lazy">
 <img src="assets/gallery/4.jpg" alt="Study abroad promotion image 4 of 7" loading="lazy">
 <img src="assets/gallery/5.jpg" alt="Study abroad promotion image 5 of 7" loading="lazy">
 <img src="assets/gallery/6.jpg" alt="Study abroad promotion image 6 of 7" loading="lazy">
-<img src="assets/gallery/7.jpg" alt="Study abroad promotion image 7 of 7" loading="lazy"></div><p class="project-type">Global Fairfield · Study Abroad</p><h3>POV: Your camera roll while studying abroad</h3><p>A study abroad promotion created for Global Fairfield.</p></article><article class="project"><video controls playsinline preload="metadata" aria-label="Cosetta TikTok promotion"><source src="assets/cosetta.mp4" type="video/mp4">Your browser does not support this video.</video><p class="project-type">Digital Marketing · Cosetta</p><h3>Cosetta TikTok promotion</h3><p>A TikTok video promoting Cosetta, a local Fairfield business, for a digital marketing class project.</p></article><article class="project"><a href="assets/wild-scenic-flyer.png" target="_blank" rel="noopener noreferrer" aria-label="View the Wild and Scenic Film Festival flyer in full size"><img class="project-flyer" src="assets/wild-scenic-flyer.png" alt="Promotional flyer for the Wild and Scenic Film Festival in Boston" loading="lazy"></a><p class="project-type">“e” inc. · Event Marketing</p><h3>Wild &amp; Scenic Film Festival</h3><p>A promotional event flyer for “e” inc.'s Wild &amp; Scenic Film Festival in Boston.</p></article></div></section>
+<img src="assets/gallery/7.jpg" alt="Study abroad promotion image 7 of 7" loading="lazy"></div><p class="gallery-hint">Swipe to see all 7 images →</p><p class="project-type">Global Fairfield · Study Abroad</p><h3>POV: Your camera roll while studying abroad</h3><p>A study abroad promotion created for Global Fairfield.</p></article><article class="project"><video controls playsinline preload="metadata" aria-label="Cosetta TikTok promotion"><source src="assets/cosetta.mp4" type="video/mp4">Your browser does not support this video.</video><p class="project-type">Digital Marketing · Cosetta</p><h3>Cosetta TikTok promotion</h3><p>A TikTok video promoting Cosetta, a local Fairfield business, for a digital marketing class project.</p></article><article class="project"><a href="assets/wild-scenic-flyer.png" target="_blank" rel="noopener noreferrer" aria-label="View the Wild and Scenic Film Festival flyer in full size"><img class="project-flyer" src="assets/wild-scenic-flyer.png" alt="Promotional flyer for the Wild and Scenic Film Festival in Boston" loading="lazy"></a><p class="project-type">“e” inc. · Event Marketing</p><h3>Wild &amp; Scenic Film Festival</h3><p>A promotional event flyer for “e” inc.'s Wild &amp; Scenic Film Festival in Boston.</p></article></div></section>
 
     <!-- =========================
          SKILLS
@@ -815,6 +819,15 @@
   ========================== -->
 
   <script>
+
+    const projectList = document.getElementById("project-list");
+    document.querySelectorAll(".project-controls button").forEach(button => {
+      button.addEventListener("click", () => {
+        const card = projectList.querySelector(".project");
+        const gap = parseFloat(getComputedStyle(projectList).columnGap) || 0;
+        projectList.scrollBy({ left: (card.offsetWidth + gap) * (button.classList.contains("projects-next") ? 1 : -1), behavior: "smooth" });
+      });
+    });
 
     // Smooth scrolling for navigation links
 
